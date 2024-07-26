@@ -57,7 +57,7 @@ void rules(){
 
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(44, 70);
-    printf("Copyright 2023 Battleship Alassane Wade");
+    printf("Copyright 2024 Sudoku Alassane Wade");
 
     gotoligcol(37, 0);
     // Appel du menu
