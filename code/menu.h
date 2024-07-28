@@ -86,6 +86,33 @@ void menu(){
             scanf("%d", &difficulty);
         }
     }
+    
+    // Load game
+    if (menu_options == 2)
+    {
+        system("cls");
+        loadgame();
+    }
+        // Quitter
+    else if (menu_options == 4)
+    {
+        system("cls");
+        gotoligcol(4, 45);
+        SetConsoleTextAttribute(hConsole, 11);
+        printf("///////////////////////////// ");
+        SetConsoleTextAttribute(hConsole, 15);
+        printf("T H A N K  Y O U !");
+        SetConsoleTextAttribute(hConsole, 11);
+        printf(" /////////////////////////////");
+        gotoligcol(6, 73);
+        SetConsoleTextAttribute(hConsole, 15);
+        printf("We hope to see you soon");
+        gotoligcol(44, 70);
+        printf("Copyright 2024 Sudoku Alassane Wade");
+        sleep(4);
+        system("cls");
+        exit(0);
+    }
 
     // Rules
     if (menu_options == 3)
