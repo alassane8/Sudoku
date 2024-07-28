@@ -91,7 +91,6 @@ void menu(){
     if (menu_options == 2)
     {
         system("cls");
-        loadgame();
     }
         // Quitter
     else if (menu_options == 4)
