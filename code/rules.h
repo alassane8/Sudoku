@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void rules(){
+void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
 
     //Variables definitions
     int backToMenu;
@@ -16,13 +16,13 @@ void rules(){
 
     // Affichage des regles
     gotoligcol(1, 60);
-    SetConsoleTextAttribute(hConsole, 11);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("///////////////////////////// ");
     SetConsoleTextAttribute(hConsole, 15);
     printf("R U L E S");
-    SetConsoleTextAttribute(hConsole, 11);
+    SetConsoleTextAttribute(hConsole, 6);
     printf(" /////////////////////////////");
-    SetConsoleTextAttribute(hConsole, 10);
+    SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(5, 0);
     printf("Rule 1 - Each row must contain the numbers from 1 to 9, without repetitions\n");
     SetConsoleTextAttribute(hConsole, 15);
@@ -31,7 +31,7 @@ void rules(){
            "Every puzzle, regardless of the difficulty level, begins with allocated numbers on the grid. \n"
            "The player should use these numbers as clues to find which digits are missing in each row.\n\n\n");
 
-    SetConsoleTextAttribute(hConsole, 10);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("Rule 2 - Each column must contain the numbers from 1 to 9, without repetitions\n");
     SetConsoleTextAttribute(hConsole, 15);
     printf("The Sudoku rules for the columns on the grid are exactly the same as for the rows. The player must \n"
@@ -39,7 +39,7 @@ void rules(){
            "The numbers allocated at the beginning of the puzzle work as clues to find which digits are missing \n"
            "in each column and their position.\n\n\n");
 
-    SetConsoleTextAttribute(hConsole, 10);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("Rule 3 - The digits can only occur once per block (nonet)\n");
     SetConsoleTextAttribute(hConsole, 15);
     printf("A regular 9 x 9 grid is divided into 9 smaller blocks of 3 x 3, also known as nonets. The numbers \n"
@@ -47,7 +47,7 @@ void rules(){
            "In practice, this means that the process of filling the rows and columns without duplicated digits \n"
            "finds inside each block another restriction to the numbers’ positioning.\n\n\n");
 
-    SetConsoleTextAttribute(hConsole, 10);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("Rule 4 - The sum of every single row, column, and nonet must equal 45\n");
     SetConsoleTextAttribute(hConsole, 15);
     printf("To find out which numbers are missing from each row, column, or block or if there are any duplicates,\n"
@@ -61,7 +61,7 @@ void rules(){
 
     gotoligcol(37, 0);
     // Appel du menu
-    SetConsoleTextAttribute(hConsole, 11);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("Main menu: \n");
     SetConsoleTextAttribute(hConsole, 15);
     printf("1. Yes\n");
@@ -81,7 +81,7 @@ void rules(){
     if (backToMenu == 1)
     {
         system("cls");
-        menu();
+        menu(mat, mat_bis, pseudo);
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
