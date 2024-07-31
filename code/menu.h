@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void menu(){
+void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     
     //Variables definition 
     int difficulty = 0;
@@ -15,13 +15,13 @@ void menu(){
     HANDLE hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    // Acceuil du joueur 1
+    // Player 1
     gotoligcol(8, 30);
-    SetConsoleTextAttribute(hConsole, 11);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("/////////////////////////////////// ");
     SetConsoleTextAttribute(hConsole, 15);
     printf("M A I N   M E N U");
-    SetConsoleTextAttribute(hConsole, 11);
+    SetConsoleTextAttribute(hConsole, 6);
     printf(" ////////////////////////////////////");
     SetConsoleTextAttribute(hConsole, 15);
 
@@ -41,7 +41,7 @@ void menu(){
     fflush(stdin);
     scanf("%d", &menu_options);
 
-    // Erreur de saisie
+    // Inputs mistakes
     while (menu_options != 1 && menu_options != 2 && menu_options != 3 && menu_options != 4)
     {
         gotoligcol(25, 140);
@@ -55,12 +55,12 @@ void menu(){
         scanf("%d", menu_options);
     }
 
-    // Jouer 
+    // Play 
     if (menu_options == 1)
     {
-        // Choix du niveau de l'ia
+        // Sudoku level
         gotoligcol(15, 70);
-        SetConsoleTextAttribute(hConsole, 11);
+        SetConsoleTextAttribute(hConsole, 6);
         printf("Choose Sudoku difficulty:");
         SetConsoleTextAttribute(hConsole, 15);
         gotoligcol(16, 70);
@@ -85,6 +85,18 @@ void menu(){
             fflush(stdin);
             scanf("%d", &difficulty);
         }
+
+        system("cls");
+
+        decors();
+
+        initialisation_matrice(mat, mat_bis);
+        
+        
+
+        play(mat, mat_bis, pseudo);
+
+
     }
     
     // Load game
@@ -92,16 +104,17 @@ void menu(){
     {
         system("cls");
     }
-        // Quitter
+
+    // Exit
     else if (menu_options == 4)
     {
         system("cls");
         gotoligcol(4, 45);
-        SetConsoleTextAttribute(hConsole, 11);
+        SetConsoleTextAttribute(hConsole, 6);
         printf("///////////////////////////// ");
         SetConsoleTextAttribute(hConsole, 15);
         printf("T H A N K  Y O U !");
-        SetConsoleTextAttribute(hConsole, 11);
+        SetConsoleTextAttribute(hConsole, 6);
         printf(" /////////////////////////////");
         gotoligcol(6, 73);
         SetConsoleTextAttribute(hConsole, 15);
@@ -117,26 +130,32 @@ void menu(){
     if (menu_options == 3)
     {
         system("cls");
-        rules();
+        rules(mat, mat_bis, pseudo);
     }
         // Quitter
     else if (menu_options == 4)
     {
         system("cls");
         gotoligcol(4, 45);
-        SetConsoleTextAttribute(hConsole, 11);
+        SetConsoleTextAttribute(hConsole, 6);
         printf("///////////////////////////// ");
         SetConsoleTextAttribute(hConsole, 15);
         printf("T H A N K  Y O U !");
-        SetConsoleTextAttribute(hConsole, 11);
+        SetConsoleTextAttribute(hConsole, 6);
         printf(" /////////////////////////////");
         gotoligcol(6, 73);
         SetConsoleTextAttribute(hConsole, 15);
         printf("We hope to see you soon");
         gotoligcol(44, 70);
-        printf("Copyright 2024 Sudoku Alassane Wade");
+        printf("Copyright 2024 Sudoku Alassane Wade");     
+
+        free(mat);
+        free(mat_bis);
+
         sleep(4);
+
         system("cls");
+
         exit(0);
     }
 }
