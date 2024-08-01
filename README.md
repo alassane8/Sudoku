@@ -53,6 +53,7 @@ You are now ready to play !
     To find out which numbers are missing from each row, column, or block or if there are any duplicates,
     the player can simply count or flex their math skills and sum the numbers. When the digits occur only once,
     the total of each row, column, and group must be 45.
+    
     1+2+3+4+5+6+7+8+9= 45
 
 ## Area for improvement
