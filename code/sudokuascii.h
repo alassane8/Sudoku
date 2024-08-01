@@ -49,3 +49,25 @@ void sudokuascii(){
     SetConsoleTextAttribute(hConsole, 15);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void sudokuload(){
+    
+    HANDLE hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    
+    SetConsoleTextAttribute(hConsole, 6);
+    gotoligcol(20, 140);
+    printf("               _       _ ");
+    gotoligcol(21, 140);
+    printf("              | |     | | ");
+    gotoligcol(22, 140);
+    printf(" ___ _   _  __| | ___ | | ___   _ ");
+    gotoligcol(23, 140);
+    printf("/ __| | | |/ _ `|/ _ L| |/ / | | |");
+    gotoligcol(24, 140);
+    printf("L__ L |_| | (_| | (_) |   <| |_| |");
+    gotoligcol(25, 140);
+    printf("|___/L__,_|L__,_|L___/|_|L_LL__,_|");
+    SetConsoleTextAttribute(hConsole, 15);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

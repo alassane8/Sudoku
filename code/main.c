@@ -12,8 +12,11 @@
 #include "menu.h"
 #include "decorations.h"
 #include "initialization_matrices.h"
+#include "choice_loading_game.h"
+#include "choice_saving_game.h"
 #include "rules.h"
 #include "play.h"
+#include "exitgame.h"
 #include "sudokuascii.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

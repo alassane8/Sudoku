@@ -105,6 +105,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     if (menu_options == 2)
     {
         system("cls");
+        choice_loading_game(mat, mat_bis, pseudo);
     }
 
     // Rules
@@ -118,29 +119,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     else if (menu_options == 4)
     {
         system("cls");
-        sudokumain();
-        gotoligcol(4, 45);
-        SetConsoleTextAttribute(hConsole, 6);
-        printf("///////////////////////////// ");
-        SetConsoleTextAttribute(hConsole, 15);
-        printf("T H A N K  Y O U !");
-        SetConsoleTextAttribute(hConsole, 6);
-        printf(" /////////////////////////////");
-        gotoligcol(6, 73);
-        SetConsoleTextAttribute(hConsole, 15);
-        printf("We hope to see you soon");
-        gotoligcol(44, 70);
-        printf("Copyright 2024 Sudoku Alassane Wade");
-
-
-        free(mat);
-        free(mat_bis);
-
-        sleep(4);
-
-        system("cls");
-
-        exit(0);
+        exitgame(mat, mat_bis, pseudo);
     }
 }
 
