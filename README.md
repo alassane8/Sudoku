@@ -10,7 +10,6 @@ Alassane WADE Sudoku Game
 
 Game of Sudoku in C Language.
 
-
 ## Instructions
 To play Sudoku, follow the instructions :
 
