@@ -59,7 +59,7 @@ int main(){
     gotoligcol(6, 70);
     printf("Welcome %s !\n\n", pseudo);
 
-    sudokuascii();
+    sudokumain();
 
     gotoligcol(30, 70);
     printf("Loading...");
@@ -80,3 +80,4 @@ int main(){
     //Calling menu
     menu(mat, mat_bis, pseudo);
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

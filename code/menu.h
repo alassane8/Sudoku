@@ -25,6 +25,8 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     printf(" ////////////////////////////////////");
     SetConsoleTextAttribute(hConsole, 15);
 
+    sudokuascii();
+
     //Copyrights
     gotoligcol(44, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
@@ -105,10 +107,18 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
         system("cls");
     }
 
+    // Rules
+    if (menu_options == 3)
+    {
+        system("cls");
+        rules(mat, mat_bis, pseudo);
+    }
+
     // Exit
     else if (menu_options == 4)
     {
         system("cls");
+        sudokumain();
         gotoligcol(4, 45);
         SetConsoleTextAttribute(hConsole, 6);
         printf("///////////////////////////// ");
@@ -121,33 +131,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
         printf("We hope to see you soon");
         gotoligcol(44, 70);
         printf("Copyright 2024 Sudoku Alassane Wade");
-        sleep(4);
-        system("cls");
-        exit(0);
-    }
 
-    // Rules
-    if (menu_options == 3)
-    {
-        system("cls");
-        rules(mat, mat_bis, pseudo);
-    }
-        // Quitter
-    else if (menu_options == 4)
-    {
-        system("cls");
-        gotoligcol(4, 45);
-        SetConsoleTextAttribute(hConsole, 6);
-        printf("///////////////////////////// ");
-        SetConsoleTextAttribute(hConsole, 15);
-        printf("T H A N K  Y O U !");
-        SetConsoleTextAttribute(hConsole, 6);
-        printf(" /////////////////////////////");
-        gotoligcol(6, 73);
-        SetConsoleTextAttribute(hConsole, 15);
-        printf("We hope to see you soon");
-        gotoligcol(44, 70);
-        printf("Copyright 2024 Sudoku Alassane Wade");     
 
         free(mat);
         free(mat_bis);

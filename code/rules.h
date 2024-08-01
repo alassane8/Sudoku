@@ -58,6 +58,7 @@ void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(44, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
+    sudokuascii();
 
     gotoligcol(37, 0);
     // Appel du menu
