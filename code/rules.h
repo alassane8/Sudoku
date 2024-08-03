@@ -55,9 +55,10 @@ void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
            "the total of each row, column, and group must be 45.\n\n"
            "1+2+3+4+5+6+7+8+9= 45\n");
 
-    SetConsoleTextAttribute(hConsole, 15);
+    SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(44, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
+    SetConsoleTextAttribute(hConsole, 15);
     sudokuascii();
 
     gotoligcol(37, 0);

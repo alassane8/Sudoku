@@ -11,6 +11,7 @@ void decors();
 void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo);
 void sudokumain();
 void sudokuascii();
+void sudokuload();
 void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void exitgame(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);

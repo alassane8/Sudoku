@@ -16,10 +16,13 @@ void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *ps
 
     // Clean page
     system("cls");
+    SetConsoleTextAttribute(hConsole, 6);
+    gotoligcol(44, 70);
+    printf("Copyright 2024 Sudoku Alassane Wade");
+    SetConsoleTextAttribute(hConsole, 15);
 
     // Display files matrices
-
-    sudokuascii();
+    sudokuload();
 
     gotoligcol(20, 70);
     SetConsoleTextAttribute(hConsole, 6);
@@ -32,16 +35,14 @@ void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *ps
     gotoligcol(23, 70);
     printf("3. Over Game 3");
     gotoligcol(24, 70);
-    printf("4. Main menu");
-    gotoligcol(44, 70);
-    printf("Copyright 2024 Sudoku Alassane Wade");
-    gotoligcol(25, 70);
+    printf("4. Back to Game");
     fflush(stdin);
+    gotoligcol(25, 70);
     scanf("%d", &choice);
 
     while (choice != 4)
     {
-        gotoligcol(25, 140);
+        gotoligcol(25, 120);
         SetConsoleTextAttribute(hConsole, 12);
         printf("Error.");
         SetConsoleTextAttribute(hConsole, 15);
@@ -52,6 +53,7 @@ void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *ps
         scanf("%d", &choice);
     }
     system("cls");
-    menu(mat, mat_bis, pseudo);
+    decors();
+    play(mat, mat_bis, pseudo);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

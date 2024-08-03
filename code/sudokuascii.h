@@ -34,17 +34,17 @@ void sudokuascii(){
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     
     SetConsoleTextAttribute(hConsole, 6);
-    gotoligcol(12, 140);
+    gotoligcol(12, 120);
     printf("               _       _ ");
-    gotoligcol(13, 140);
+    gotoligcol(13, 120);
     printf("              | |     | | ");
-    gotoligcol(14, 140);
+    gotoligcol(14, 120);
     printf(" ___ _   _  __| | ___ | | ___   _ ");
-    gotoligcol(15, 140);
+    gotoligcol(15, 120);
     printf("/ __| | | |/ _ `|/ _ L| |/ / | | |");
-    gotoligcol(16, 140);
+    gotoligcol(16, 120);
     printf("L__ L |_| | (_| | (_) |   <| |_| |");
-    gotoligcol(17, 140);
+    gotoligcol(17, 120);
     printf("|___/L__,_|L__,_|L___/|_|L_LL__,_|");
     SetConsoleTextAttribute(hConsole, 15);
 }
@@ -56,17 +56,17 @@ void sudokuload(){
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     
     SetConsoleTextAttribute(hConsole, 6);
-    gotoligcol(20, 140);
+    gotoligcol(20, 120);
     printf("               _       _ ");
-    gotoligcol(21, 140);
+    gotoligcol(21, 120);
     printf("              | |     | | ");
-    gotoligcol(22, 140);
+    gotoligcol(22, 120);
     printf(" ___ _   _  __| | ___ | | ___   _ ");
-    gotoligcol(23, 140);
+    gotoligcol(23, 120);
     printf("/ __| | | |/ _ `|/ _ L| |/ / | | |");
-    gotoligcol(24, 140);
+    gotoligcol(24, 120);
     printf("L__ L |_| | (_| | (_) |   <| |_| |");
-    gotoligcol(25, 140);
+    gotoligcol(25, 120);
     printf("|___/L__,_|L__,_|L___/|_|L_LL__,_|");
     SetConsoleTextAttribute(hConsole, 15);
 }

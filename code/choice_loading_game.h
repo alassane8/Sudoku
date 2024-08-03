@@ -16,10 +16,13 @@ void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *p
 
     // Clean page
     system("cls");
+    SetConsoleTextAttribute(hConsole, 6);
+    gotoligcol(44, 70);
+    printf("Copyright 2024 Sudoku Alassane Wade");
+    SetConsoleTextAttribute(hConsole, 15);
 
     // Display files matrices
-
-    sudokuascii();
+    sudokuload();
 
     gotoligcol(20, 70);
     SetConsoleTextAttribute(hConsole, 6);
@@ -33,15 +36,13 @@ void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *p
     printf("3. Game 3");
     gotoligcol(24, 70);
     printf("4. Main menu");
-    gotoligcol(44, 70);
-    printf("Copyright 2024 Sudoku Alassane Wade");
-    gotoligcol(25, 70);
     fflush(stdin);
+    gotoligcol(25, 70);
     scanf("%d", &choice);
 
     while (choice != 4)
     {
-        gotoligcol(25, 140);
+        gotoligcol(25, 120);
         SetConsoleTextAttribute(hConsole, 12);
         printf("Error.");
         SetConsoleTextAttribute(hConsole, 15);

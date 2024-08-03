@@ -21,18 +21,31 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     HANDLE hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    SetConsoleTextAttribute(hConsole, 15);
+    SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(44, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
+    SetConsoleTextAttribute(hConsole, 15);
     sudokuascii();
 
     // Set the cursor position to the top-left corner of the screen
     SetCursorPos(0, 0);
 
-    gotoligcol(30, 0);
-    printf("Press arrow keys to move the cursor");
-    gotoligcol(31, 0);
-    printf("Press 'q' to quit.\n");    
+    gotoligcol(23, 0);
+    printf("Press '");
+    SetConsoleTextAttribute(hConsole, 6);
+    gotoligcol(23, 7);
+    printf("arrow keys");
+    SetConsoleTextAttribute(hConsole, 15);
+    gotoligcol(23, 17);
+    printf("' to move the cursor");
+    gotoligcol(24, 0);
+    printf("Press '");
+    gotoligcol(24, 7);
+    SetConsoleTextAttribute(hConsole, 6);
+    printf("q");
+    SetConsoleTextAttribute(hConsole, 15);
+    gotoligcol(24, 8);
+    printf("' to quit\n");   
     move_cursor(x, y);
 
 
@@ -60,7 +73,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
         move_cursor(x, y);
         }
     }
-    gotoligcol(36, 0);
+    gotoligcol(26, 0);
     // Appel du menu
     SetConsoleTextAttribute(hConsole, 6);
     printf("Options:\n");
@@ -71,13 +84,13 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     scanf("%d", &option);
     while ( option != 1 && option != 2 && option != 3)
     {
-        gotoligcol(42, 0);
+        gotoligcol(25, 120);
         SetConsoleTextAttribute(hConsole, 12);
         printf("Error.");
         SetConsoleTextAttribute(hConsole, 15);
-        gotoligcol(40, 0);
+        gotoligcol(30, 0);
         printf("  ");
-        gotoligcol(40, 0);
+        gotoligcol(30, 0);
         fflush(stdin);
         scanf("%d", &option);
     }

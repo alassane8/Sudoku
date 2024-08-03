@@ -28,8 +28,10 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     sudokuascii();
 
     //Copyrights
+    SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(44, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
+    SetConsoleTextAttribute(hConsole, 15);
 
     gotoligcol(10, 70);
     printf("1. Play");
@@ -46,7 +48,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     // Inputs mistakes
     while (menu_options != 1 && menu_options != 2 && menu_options != 3 && menu_options != 4)
     {
-        gotoligcol(25, 140);
+        gotoligcol(25, 120);
         SetConsoleTextAttribute(hConsole, 12);
         printf("Error.");
         SetConsoleTextAttribute(hConsole, 15);
@@ -54,7 +56,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
         printf("  ");
         gotoligcol(14, 70);
         fflush(stdin);
-        scanf("%d", menu_options);
+        scanf("%d", &menu_options);
     }
 
     // Play 
@@ -77,7 +79,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
 
         while (difficulty != 1 && difficulty != 2 && difficulty != 3)
         {
-            gotoligcol(25, 140);
+            gotoligcol(25, 120);
             SetConsoleTextAttribute(hConsole, 12);
             printf("Error.");
             SetConsoleTextAttribute(hConsole, 15);
@@ -93,8 +95,6 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
         decors();
 
         initialisation_matrice(mat, mat_bis);
-        
-        
 
         play(mat, mat_bis, pseudo);
 
