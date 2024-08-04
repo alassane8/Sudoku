@@ -16,6 +16,13 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     // Player 1
+    gotoligcol(0, 30);
+    SetConsoleTextAttribute(hConsole, 6);
+    printf("/////////////////////////////////////// ");
+    SetConsoleTextAttribute(hConsole, 15);
+    printf("S U D O K U");
+    SetConsoleTextAttribute(hConsole, 6);
+    printf(" ///////////////////////////////////////\n");
     gotoligcol(8, 30);
     SetConsoleTextAttribute(hConsole, 6);
     printf("/////////////////////////////////// ");
@@ -29,7 +36,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
 
     //Copyrights
     SetConsoleTextAttribute(hConsole, 6);
-    gotoligcol(44, 70);
+    gotoligcol(34, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
     SetConsoleTextAttribute(hConsole, 15);
 

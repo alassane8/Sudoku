@@ -50,7 +50,7 @@ int main(){
     
     //Copyrights
     SetConsoleTextAttribute(hConsole, 6);
-    gotoligcol(44, 70);
+    gotoligcol(34, 70);
     printf("Copyright 2024 Sudoku Alassane Wade");
     SetConsoleTextAttribute(hConsole, 15);
 
