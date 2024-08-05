@@ -15,6 +15,9 @@ void sudokuload();
 void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void exitgame(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
+void easy(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
+void medium(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
+void hard(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #endif

@@ -97,15 +97,32 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
             scanf("%d", &difficulty);
         }
 
-        system("cls");
+        if(difficulty == 1){
 
-        decors();
+            system("cls");
+            decors();
+            initialisation_matrice(mat, mat_bis);
+            easy(mat, mat_bis, pseudo);
+            play(mat, mat_bis, pseudo);
+        }
 
-        initialisation_matrice(mat, mat_bis);
+        if(difficulty == 2){
 
-        play(mat, mat_bis, pseudo);
+            system("cls");
+            decors();
+            initialisation_matrice(mat, mat_bis);
+            medium(mat, mat_bis, pseudo);
+            play(mat, mat_bis, pseudo);
+        }
 
+        if(difficulty == 3){
 
+            system("cls");
+            decors();
+            initialisation_matrice(mat, mat_bis);
+            hard(mat, mat_bis, pseudo);
+            play(mat, mat_bis, pseudo);      
+        }
     }
     
     // Load game
