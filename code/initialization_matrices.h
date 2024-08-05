@@ -14,8 +14,8 @@ void initialisation_matrice(unsigned char ** mat, unsigned char ** mat_ia1){
     int underscore = 95;
 
     //Matrices initializaions
-    for (i = 1; i < 10; i++){
-        for (j = 1; j < 10; j++){
+    for (i = 0; i < 9; i++){
+        for (j = 0; j < 9; j++){
             mat[i][j] = underscore;
             mat_ia1[i][j] = underscore;
         }
