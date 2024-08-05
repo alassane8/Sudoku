@@ -20,21 +20,21 @@ void decors(){
 
     //Grid setup
     for (i = 0; i < 3; i++){
-        SetConsoleTextAttribute(hConsole, 12);
+        SetConsoleTextAttribute(hConsole, 6);
         printf("+----------------------------+----------------------------+----------------------------+\n");
         for (j = 0; j < 3; j++){
             for (k = 0; k < 3; k++){
-                SetConsoleTextAttribute(hConsole, 12);
-                printf("| ");
                 SetConsoleTextAttribute(hConsole, 6);
+                printf("| ");
+                SetConsoleTextAttribute(hConsole, 8);
                 printf("      .      .      .      ");
             }
-            SetConsoleTextAttribute(hConsole, 12);
+            SetConsoleTextAttribute(hConsole, 6);
             printf("|");
             printf("\n\n");
         }
     }
-    SetConsoleTextAttribute(hConsole, 12);
+    SetConsoleTextAttribute(hConsole, 6);
     printf("+----------------------------+----------------------------+----------------------------+\n");
     SetConsoleTextAttribute(hConsole, 15);
 }

@@ -61,22 +61,25 @@ void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     SetConsoleTextAttribute(hConsole, 15);
     sudokuascii();
 
-    gotoligcol(37, 0);
+    gotoligcol(27, 120);
     // Appel du menu
     SetConsoleTextAttribute(hConsole, 6);
     printf("Main menu: \n");
     SetConsoleTextAttribute(hConsole, 15);
+    gotoligcol(28, 120);
     printf("1. Yes\n");
+    gotoligcol(29, 120);
     scanf("%d", &backToMenu);
+
     while (backToMenu != 1)
     {
-        gotoligcol(42, 0);
+       gotoligcol(31, 120);
         SetConsoleTextAttribute(hConsole, 12);
         printf("Error.");
         SetConsoleTextAttribute(hConsole, 15);
-        gotoligcol(39, 0);
+        gotoligcol(29, 120);
         printf("  ");
-        gotoligcol(39, 0);
+        gotoligcol(29, 120);
         fflush(stdin);
         scanf("%d", &backToMenu);
     }
