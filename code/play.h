@@ -43,16 +43,46 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     printf("Press '");
     gotoligcol(24, 7);
     SetConsoleTextAttribute(hConsole, 6);
-    printf("q");
+    printf("m");
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(24, 8);
-    printf("' to quit\n");   
+    printf("' to go back to menu\n");  
+    gotoligcol(25, 0);
+    printf("Press '");
+    gotoligcol(25, 7);
+    SetConsoleTextAttribute(hConsole, 6);
+    printf("s");
+    SetConsoleTextAttribute(hConsole, 15);
+    gotoligcol(25, 8);
+    printf("' to save\n");  
+    gotoligcol(26, 0);
+    printf("Press '");
+    gotoligcol(26, 7);
+    SetConsoleTextAttribute(hConsole, 6);
+    printf("q");
+    SetConsoleTextAttribute(hConsole, 15);
+    gotoligcol(26, 8);  
+    printf("' to quit\n"); 
     move_cursor(x, y);
 
 
     while (1) {
         keypressed = _getch();
-        if (keypressed == 'q') break; // Exit on 'q'
+
+        if (keypressed == 'q'){
+            system("cls");
+            exitgame(mat, mat_bis, pseudo);
+        }
+        
+        if (keypressed == 's'){
+            system("cls");
+            choice_saving_game(mat, mat_bis, pseudo);
+        }
+        
+        if (keypressed == 'm'){
+            system("cls");
+            menu(mat, mat_bis, pseudo);
+        }
 
         // Check for special keys
         if (keypressed == 224) { // Arrow keys have a leading 224
@@ -73,42 +103,6 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
             } 
         move_cursor(x, y);
         }
-    }
-    gotoligcol(26, 0);
-    // Appel du menu
-    SetConsoleTextAttribute(hConsole, 6);
-    printf("Options:\n");
-    SetConsoleTextAttribute(hConsole, 15);
-    printf("1. Main menu\n");
-    printf("2. Save game\n");
-    printf("3. Exit game\n");
-    scanf("%d", &option);
-    while ( option != 1 && option != 2 && option != 3)
-    {
-        gotoligcol(25, 120);
-        SetConsoleTextAttribute(hConsole, 12);
-        printf("Error.");
-        SetConsoleTextAttribute(hConsole, 15);
-        gotoligcol(30, 0);
-        printf("  ");
-        gotoligcol(30, 0);
-        fflush(stdin);
-        scanf("%d", &option);
-    }
-    if (option == 1)
-    {
-        system("cls");
-        menu(mat, mat_bis, pseudo);
-    }
-    if (option == 2)
-    {
-        system("cls");
-        choice_saving_game(mat, mat_bis, pseudo);
-    }
-    if (option == 3)
-    {
-        system("cls");
-        exitgame(mat, mat_bis, pseudo);
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
