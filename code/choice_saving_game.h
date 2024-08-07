@@ -53,7 +53,7 @@ void choice_saving_game(unsigned char ** mat, unsigned char ** mat_bis, char *ps
         scanf("%d", &choice);
     }
     system("cls");
-    decors();
+    decors(mat);
     play(mat, mat_bis, pseudo);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
