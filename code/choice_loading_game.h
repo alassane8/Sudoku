@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <windows.h>
+#include <windows.h> 
 #include <time.h>
 #include <unistd.h>
 
@@ -21,8 +21,8 @@ void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *p
     printf("Copyright 2024 Sudoku Alassane Wade");
     SetConsoleTextAttribute(hConsole, 15);
 
-    // Display files matrices
-    sudokuload();
+    // // Display files matrices
+    // display_files();
 
     gotoligcol(20, 70);
     SetConsoleTextAttribute(hConsole, 6);
@@ -56,5 +56,6 @@ void choice_loading_game(unsigned char ** mat, unsigned char ** mat_bis, char *p
         system("cls");
         menu(mat, mat_bis, pseudo);
     }
+    
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
