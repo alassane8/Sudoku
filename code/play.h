@@ -33,7 +33,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     printf("Press '");
     SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(23, 7);
-    printf("w,s,a,d");
+    printf("t,f,g,h");
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(23, 14);
     printf("' to move the cursor");
@@ -44,7 +44,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     printf("m");
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(24, 8);
-    printf("' to go back to menu\n");  
+    printf("' to go back to Menu\n");  
     gotoligcol(25, 0);
     printf("Press '");
     gotoligcol(25, 7);
@@ -52,7 +52,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     printf("s");
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(25, 8);
-    printf("' to save\n");  
+    printf("' to Save\n");  
     gotoligcol(26, 0);
     printf("Press '");
     gotoligcol(26, 7);
@@ -60,7 +60,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     printf("q");
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(26, 8);  
-    printf("' to quit\n"); 
+    printf("' to Quit\n"); 
 
     // Set the cursor position to the top-left corner of the screen
     SetCursorPos(5, 2);
@@ -69,13 +69,19 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
 
     while (1) {
         keypressed = _getch();
+        if (keypressed >= '1' && keypressed <= '9'){
+            gotoligcol(y, x);
+            SetConsoleTextAttribute(hConsole, 6);
+            printf("%c", keypressed);
+            SetConsoleTextAttribute(hConsole, 15);
+        }
 
         if (keypressed == 'q'){
             system("cls");
             exitgame(mat, mat_bis, pseudo);
         }
         
-        if (keypressed == 'v'){
+        if (keypressed == 's'){
             system("cls");
             choice_saving_game(mat, mat_bis, pseudo);
         }
@@ -84,19 +90,19 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
             system("cls");
             menu(mat, mat_bis, pseudo);
         }
-        if (keypressed == 'w'){//up
-            y = (y > 0) ? y - 2 : y;
+        if (keypressed == 't' && y > 2){//up
+            y = (y > 1) ? y - 2 : y;
             move_cursor(x, y);
         }
-        if (keypressed == 's'){//down
+        if (keypressed == 'g' && y < 18){//down
             y = y + 2;
             move_cursor(x, y);
         }
-        if (keypressed == 'a'){//left
+        if (keypressed == 'f'){//left
             x = (x > 0) ? x - 10 : x;
             move_cursor(x, y);
         }
-        if (keypressed == 'd'){//right
+        if (keypressed == 'h' && x < 85){//right
             x = x + 10;
             move_cursor(x, y);
         }
