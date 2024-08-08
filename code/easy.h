@@ -7,7 +7,6 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 void easy(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     
     //Variables definition
@@ -17,7 +16,7 @@ void easy(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     int underscore = 95;
     HANDLE hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
+    
     //Choose randomly number and positions in grid
     srand(time(0));
     for (i = 0; i < 9; i++){

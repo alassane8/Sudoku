@@ -53,7 +53,7 @@ void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo){
     printf("To find out which numbers are missing from each row, column, or block or if there are any duplicates,\n"
            "the player can simply count or flex their math skills and sum the numbers. When the digits occur only once, \n"
            "the total of each row, column, and group must be 45.\n\n"
-           "1+2+3+4+5+6+7+8+9= 45\n");
+           "1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45\n");
 
     SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(34, 70);

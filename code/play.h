@@ -16,8 +16,9 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
 {
     // Variables definition
     char keypressed;
-    int x = 0;
-    int y = 0;
+    int input;
+    int x = 5;
+    int y = 2;
     int option;
     HANDLE hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -28,16 +29,13 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     SetConsoleTextAttribute(hConsole, 15);
     sudokuascii();
 
-    // Set the cursor position to the top-left corner of the screen
-    SetCursorPos(0, 0);
-
     gotoligcol(23, 0);
     printf("Press '");
     SetConsoleTextAttribute(hConsole, 6);
     gotoligcol(23, 7);
-    printf("arrow keys");
+    printf("w,s,a,d");
     SetConsoleTextAttribute(hConsole, 15);
-    gotoligcol(23, 17);
+    gotoligcol(23, 14);
     printf("' to move the cursor");
     gotoligcol(24, 0);
     printf("Press '");
@@ -63,6 +61,9 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
     SetConsoleTextAttribute(hConsole, 15);
     gotoligcol(26, 8);  
     printf("' to quit\n"); 
+
+    // Set the cursor position to the top-left corner of the screen
+    SetCursorPos(5, 2);
     move_cursor(x, y);
 
 
@@ -74,7 +75,7 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
             exitgame(mat, mat_bis, pseudo);
         }
         
-        if (keypressed == 's'){
+        if (keypressed == 'v'){
             system("cls");
             choice_saving_game(mat, mat_bis, pseudo);
         }
@@ -83,26 +84,24 @@ void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo)
             system("cls");
             menu(mat, mat_bis, pseudo);
         }
-
-        // Check for special keys
-        if (keypressed == 224) { // Arrow keys have a leading 224
-            keypressed = _getch(); // Get the actual key
-            switch (keypressed) {
-                case 72: // Up
-                    y = (y > 0) ? y - 1 : y; // Move up, if possible
-                    break;
-                case 80: // Down
-                    y++; // Move down
-                    break;
-                case 77: // Right
-                    x++; // Move right
-                    break;
-                case 75: // Left
-                    x = (x > 0) ? x - 1 : x; // Move left, if possible
-                    break;
-            } 
-        move_cursor(x, y);
+        if (keypressed == 'w'){//up
+            y = (y > 0) ? y - 2 : y;
+            move_cursor(x, y);
+        }
+        if (keypressed == 's'){//down
+            y = y + 2;
+            move_cursor(x, y);
+        }
+        if (keypressed == 'a'){//left
+            x = (x > 0) ? x - 10 : x;
+            move_cursor(x, y);
+        }
+        if (keypressed == 'd'){//right
+            x = x + 10;
+            move_cursor(x, y);
         }
     }
 }
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
