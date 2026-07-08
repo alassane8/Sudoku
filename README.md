@@ -18,7 +18,7 @@ To play Sudoku, follow the instructions :
 ## Open a terminal in full screen.
 - Clone this github repository in the path of your choice: 
 ```bash
-git clone https://github.com/alassane8/Sudoko.git
+git clone https://github.com/alassane8/Sudoku.git
 ```
 - Go to the Sudoku folder :
 ```bash
