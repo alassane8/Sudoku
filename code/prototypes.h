@@ -7,6 +7,7 @@ void menu(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void rules(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void gotoligcol( int lig, int col );
 void initialisation_matrice(unsigned char ** mat, unsigned char ** mat_ia1);
+void generate_full_grid(unsigned char ** mat);
 void decors(unsigned char ** mat);
 void play(unsigned char **mat, unsigned char **mat_bis,  char *pseudo);
 void sudokumain();
@@ -20,4 +21,4 @@ void medium(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 void hard(unsigned char ** mat, unsigned char ** mat_bis, char *pseudo);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#endif
+#endif
