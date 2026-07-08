@@ -38,7 +38,14 @@ void decors(unsigned char ** mat){
                 SetConsoleTextAttribute(hConsole, 8);
                 printf("|    ");
             }
-            printf("%d", mat[i][j]);
+            if (mat[i][j] == 0){
+                printf(" ");                            // case vide : on n'affiche rien (a la place du 0)
+            }
+            else{
+                SetConsoleTextAttribute(hConsole, 15);  // indice de depart : blanc pur
+                printf("%d", mat[i][j]);
+                SetConsoleTextAttribute(hConsole, 8);
+            }
             printf("    ");
             SetConsoleTextAttribute(hConsole, 6);
         }
